@@ -783,7 +783,7 @@ def updateApi(request, id):
         if form.is_valid():
             data = form.cleaned_data
             veterinary = client.veterinary_id
-            global_id = str(client.global_id)
+            global_id = str(client.global_id).replace("-", "")
             serialized_data = {
                 'name': data['name'],
                 'last_name': data['last_name'],
@@ -794,6 +794,7 @@ def updateApi(request, id):
                 'global_id': global_id
             }
             json_data = json.dumps(serialized_data)
+            print(json_data)
             url = 'http://localhost:8080/updateClient/' + str(client.id)
             headers = {'Content-Type': 'application/json'}
             response = requests.put(url, data=json_data, headers=headers)

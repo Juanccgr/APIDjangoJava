@@ -84,8 +84,8 @@ DATABASES = {
          'NAME': 'petsfiles',
          'USER': 'root',
          'PASSWORD': 'Juan123456',
-         'HOST': '127.0.0.1',
-         'PORT': '3306',
+         'HOST': '192.168.1.12',
+         'PORT': '3308',
      }
 }
 
